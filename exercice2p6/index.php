@@ -12,12 +12,11 @@
       si c'est le cas l'afficher sinon le signaler : index.php?lastname=Nemare&firstname=Jean -->
 
  <?php
- if (isset($_GET['age'])) //isset test directement la présence d'un paramètre et permet d'envoyer un message si il n'existe pas.
- {
-  echo  $_GET['age'] ;
- } else {
-	echo 'Il faut renseigner un age !';
-  }
+ if (isset($_GET['age']) && isset($_GET['firstname']) && isset($_GET['lastname'])) { //isset test directement la présence d'un paramètre et permet d'envoyer un message si il n'existe pas.
+  echo  $_GET['age'] ; echo $_GET['firstname']; echo $_GET['lastname'];
+} else { ?>
+	<p>Il faut renseigner un age !</p>
+<?php  }
   ?>
 </body>
 </html>

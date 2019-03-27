@@ -6,15 +6,18 @@
   <title>Exercice 1 Partie 6 php</title>
  </head>
  <body>
-   <!-- en html & s'ecris &amp; c'est ce qui sépare les différents paramètres dans l'url. -->
-   <a href="index.php?lastname=Nemare&amp;firstname=Jean">Hello !</a>
 <!-- Faire une page index.php. Tester sur cette page que tous les paramètres de cette
       URL existent et les afficher: index.php?lastname=Nemare&firstname=Jean -->
+      <a href="index.php?lastname=Nemare&amp;firstname=Jean">Hello !</a>
 <?php
   // $_GET permet d'aller recupérer la valeur de lastname et firstname directement dans l'url.
-  echo $_GET['lastname'];
-  echo $_GET['firstname'];
- ?>
+ // $_GET est une superglobale. 'lastname' est la clef associative.
+    if (isset($_GET['lastname']) && isset($_GET['firstname'])) { ?>
+    <p><?= $_GET['firstname'] . ' ' . $_GET['lastname'] ?></p>
+    <?php } else { ?>
+    <p>ERROR</p>
+   <?php }
 
+ ?>
 </body>
 </html>
